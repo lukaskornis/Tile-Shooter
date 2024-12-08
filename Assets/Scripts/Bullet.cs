@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public int damage = 1;
     public GameObject impactEffect;
+    public GameObject owner;
     Rigidbody2D rb;
 
     void Start()
@@ -15,6 +16,8 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if(other.gameObject == owner) return;
+
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject );
     }
