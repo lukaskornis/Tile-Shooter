@@ -19,6 +19,11 @@ public class Bullet : MonoBehaviour
         if(other.gameObject == owner) return;
 
         Instantiate(impactEffect, transform.position, transform.rotation);
+        if (other.gameObject.TryGetComponent(out Health health))
+        {
+            health.Damage(damage);
+        }
+
         Destroy(gameObject );
     }
 }

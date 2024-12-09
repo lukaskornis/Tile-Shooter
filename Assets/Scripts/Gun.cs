@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
 	public float fireInterval = 0.5f;
 	public float fireCooldown;
 
+	public float pitchRange = 0.1f;
 	AudioSource audioSource;
 
 	void Start()
@@ -43,6 +44,7 @@ public class Gun : MonoBehaviour
 		GameObject obj = Instantiate( bulletPrefab, transform.position, transform.rotation );
 		obj.GetComponent<Bullet>().owner = gameObject;
 
+		audioSource.pitch = Random.Range(1 - pitchRange, 1 + pitchRange);
 		audioSource.PlayOneShot(audioSource.clip);
 	}
 }
