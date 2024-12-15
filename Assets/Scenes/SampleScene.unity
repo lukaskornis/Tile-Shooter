@@ -1030,6 +1030,7 @@ GameObject:
   - component: {fileID: 914533267}
   - component: {fileID: 914533269}
   - component: {fileID: 914533270}
+  - component: {fileID: 914533271}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1113,7 +1114,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 914533264}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b42f5e6cb2cb2419bb8869f7a6b0baa2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1164,7 +1165,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1174,8 +1175,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &914533269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,6 +1292,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &914533271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914533264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aef2b1377e1d412ba7ab6e77e5d7d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundDistance: 1
+  moveSpeed: 6
+  jumpSpeed: 10
+  grounded: 0
 --- !u!1 &1075645049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1516,7 @@ GameObject:
   - component: {fileID: 1831429131}
   - component: {fileID: 1831429130}
   - component: {fileID: 1831429132}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Block Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
